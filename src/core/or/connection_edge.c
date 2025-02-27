@@ -2171,6 +2171,11 @@ connection_ap_handshake_rewrite_and_attach(entry_connection_t *conn,
   const int automap = rr.automap;
   const addressmap_entry_source_t exit_source = rr.exit_source;
 
+  //YBW
+   if (socks->address) {
+      log_notice(LD_GENERAL,"YBW-socks->address:%s", socks->address);
+   }
+
   /* Now see whether the hostname is bogus.  This could happen because of an
    * onion hostname whose format we don't recognize. */
   hostname_type_t addresstype;
